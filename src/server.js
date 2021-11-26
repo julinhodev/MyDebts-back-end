@@ -2,9 +2,12 @@ const express = require('express');
 const dotenv = require('dotenv');
 
 const router = require('./router/debts.router');
+const databaseConnect = require('./database/mongo.connection');
 
 const server = express();
 dotenv.config();
+
+databaseConnect();
 
 server.use('', router);
 
