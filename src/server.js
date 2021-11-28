@@ -6,6 +6,7 @@ const databaseConnect = require('./database/mongo.connection');
 
 const server = express();
 dotenv.config();
+server.use(express.json());
 
 databaseConnect();
 

@@ -1,14 +1,31 @@
-const getAllDebts = (request, response) => response.send('Buscando todos os débitos');
+const ModelDebts = require('../models/debts.model');
 
-const addNewDebt = (request, response) => response.send('Adicionando novo débito');
 
-const deleteOneDebt = (request, response) => response.send('Deletando um débito');
+const getAllDebts = async (request, response) => {
+    try {
+        return await ModelDebts.find({})
+    } catch (error) {
+        return console.log('Deu erro');
+    }
+};
+
+const addNewDebt = async (request, response) => {
+    try {
+        const body = request.body;
+        const newDebt = await new ModelDebts(body);
+        await newDebt.save();
+    } catch (error) {
+        return console.log('Deu erro');
+    }
+};
+
+const deleteDebt = (request, response) => response.send('Deletando um débito');
 
 const editDebit = (request, response) => response.send('Editando um débito');
 
 module.exports = {
     getAllDebts,
     addNewDebt,
-    deleteOneDebt,
+    deleteDebt,
     editDebit
 };

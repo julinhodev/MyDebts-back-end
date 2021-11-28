@@ -4,7 +4,7 @@ const router = express.Router();
 const {
     getAllDebts,
     addNewDebt,
-    deleteOneDebt,
+    deleteDebt,
     editDebit
 } = require('../controllers/debts.controller');
 
@@ -12,7 +12,7 @@ router.get('/debts', getAllDebts);
 
 router.put('/debts', addNewDebt);
 
-router.delete('/debts/:id', deleteOneDebt);
+router.delete('/debts/:id', deleteDebt);
 
 router.patch('/debts/:id', editDebit);
 
