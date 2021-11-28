@@ -13,4 +13,4 @@ databaseConnect();
 server.use('', router);
 
 const port = process.env.PORT;
-server.listen(port, () => console.log(`O servidor está rodando na porta ${port}`));
+server.listen(port, () => console.log(`The server is running on the port ${port}`));

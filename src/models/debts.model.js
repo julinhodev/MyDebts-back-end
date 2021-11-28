@@ -3,11 +3,12 @@ const { model, Schema } = require('mongoose');
 const DebtsSchema = Schema({
     description:{
         type: String,
-        require: true
+        required: true
     },
     value: {
         type: Number,
-        default: 0
+        default: 0,
+        required: true
     },
     installments:{
         type: Number,
@@ -23,7 +24,7 @@ const DebtsSchema = Schema({
     },
     date: {
         type: Date,
-        default: new Date().getUTCDate()
+        default: new Date().toUTCString()
     }
 });
 
