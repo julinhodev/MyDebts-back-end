@@ -25,6 +25,11 @@ const DebtsSchema = Schema({
     date: {
         type: Date,
         default: new Date().toUTCString()
+    },
+    everything: {
+        type: String,
+        default: "Sem observações para essa dívida!",
+        required: true
     }
 });
 
