@@ -10,7 +10,7 @@ const {
 
 router.get('/debts', getAllDebts);
 
-router.put('/debts', addNewDebt);
+router.post('/debts', addNewDebt);
 
 router.delete('/debts/:id', deleteDebt);
 

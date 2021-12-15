@@ -12,15 +12,18 @@ const DebtsSchema = Schema({
     },
     installments:{
         type: Number,
-        default: 0
+        default: 0,
+        required: true
     },
     paidInstallments: {
         type: Number,
-        default: 0
+        default: 0,
+        required: true
     },
     paymentStatus: {
         type: Boolean,
-        default: false
+        default: false,
+        required: true
     },
     date: {
         type: Date,
