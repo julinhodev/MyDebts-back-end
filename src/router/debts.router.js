@@ -5,10 +5,13 @@ const {
     getAllDebts,
     addNewDebt,
     deleteDebt,
-    editDebit
+    editDebit,
+    getOneDebts
 } = require('../controllers/debts.controller');
 
 router.get('/debts', getAllDebts);
+
+router.get('/debts/:id', getOneDebts);
 
 router.post('/debts', addNewDebt);
 
