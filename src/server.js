@@ -18,5 +18,5 @@ databaseConnect();
 server.use('', userRouter);
 server.use('', debtsRouter);
 
-const port = process.env.PORT;
+const port = process.env.PORT || 80;
 server.listen(port, () => console.log(`The server is running on the port ${port}`));
